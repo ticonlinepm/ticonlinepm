@@ -1,9 +1,11 @@
+// src/App.jsx
+
 import React from "react";
-import Login from "./Login";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Login />
     </div>
   );
