@@ -1,9 +1,8 @@
-import React from 'react';
-
 function App() {
   return (
-    <div>
-      <h1>Hello Ticonlinepm</h1>
+    <div style={{ fontFamily: 'sans-serif', textAlign: 'center', padding: '2rem' }}>
+      <h1>پروژه Ticonlinepm</h1>
+      <p>نسخه آزمایشی با Vite و React آماده است.</p>
     </div>
   );
 }
