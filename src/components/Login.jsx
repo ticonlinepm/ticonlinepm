@@ -1,43 +1,55 @@
-import React, { useState } from "react";
+  import React from "react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import logo from "../images.png";
 
-function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // اینجا می‌تونی لاگین واقعی یا بررسی اطلاعات رو پیاده‌سازی کنی
-    alert(`نام کاربری: ${username}\nرمز عبور: ${password}`);
-  };
-
+export default function LoginPage() {
   return (
-    <div style={{ margin: "50px auto", maxWidth: "400px" }}>
-      <h2>ورود به سامانه</h2>
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>نام کاربری:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            style={{ width: "100%" }}
-          />
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>رمز عبور:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            style={{ width: "100%" }}
-          />
-        </div>
-        <button type="submit">ورود</button>
-      </form>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#0c2d48] p-4">
+      <img src={logo} alt="لوگو" className="w-32 h-32 mb-4" />
+      <h1 className="text-white text-2xl font-bold mb-6">سامانه آنلاین عملیات نگهداری پیشگیرانه</h1>
+      <Card className="w-full max-w-sm shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-center">ورود</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form>
+            <div className="grid w-full items-center gap-4">
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="username">نام کاربری</Label>
+                <Input id="username" placeholder="نام کاربری خود را وارد کنید" />
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="password">رمز عبور</Label>
+                <Input id="password" type="password" placeholder="رمز عبور خود را وارد کنید" />
+              </div>
+              <Button type="submit" className="w-full bg-[#145da0] hover:bg-[#0c2d48] text-white">
+                ورود
+              </Button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 }
 
-export default Login;
+
+تغییرات اعمال شد:
+
+لوگو از مسیر src/images.png بارگذاری می‌شود.
+
+عنوان "سامانه آنلاین عملیات نگهداری پیشگیرانه" زیر لوگو قرار گرفت.
+
+پس‌زمینه تیره و دکمه آبی متناسب با لوگو انتخاب شد.
+
+
+اکنون می‌توانی صفحه را روی مرورگر باز کنی و ببینی. آیا مایل هستی مرحله بعدی طراحی را انجام دهیم؟
+
